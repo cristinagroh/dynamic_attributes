@@ -59,8 +59,8 @@ class ProductController extends Controller
             $product->base_currency_tax_value = $_POST['base_currency_tax_value'];
             $attributes = [];
             foreach(json_decode($productCategory->attributes, true) as $attribute){
-                if(isset($_POST[str_replace('','_', strtolower($attribute))])){
-                    $attributes[$attribute] = $_POST[str_replace('','_', strtolower($attribute))];
+                if(isset($_POST[str_replace(' ','_', strtolower($attribute))])){
+                    $attributes[$attribute] = $_POST[str_replace(' ','_', strtolower($attribute))];
                 }
             }
             $product->attributes = json_encode($attributes);

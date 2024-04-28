@@ -37,11 +37,8 @@
             "order": [0, 'asc'],
         });
 
-        $('.addEditProductBtn').on('click', function(){
-            id = $(this).attr('data-id');
-        });
-
         $('#editProduct').on('shown.bs.modal', function (e) {
+            id = $(e.relatedTarget).attr('data-id');
             var currentHref = $('form[name="product_form"]').attr('action')
             var newHref = currentHref.replace(":id", id);
             $('form[name="product_form"]').attr('action', newHref)

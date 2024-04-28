@@ -49,11 +49,8 @@
             "order": [0, 'asc'],
         });
 
-        $('.addEditCategoryBtn').on('click', function(){
-            id = $(this).attr('data-id');
-        });
-
         $('#editProductCategory').on('shown.bs.modal', function (e) {
+            id = $(e.relatedTarget).attr('data-id');
             var currentHref = $('form[name="product_category_form"]').attr('action')
             var newHref = currentHref.replace(":id", id);
             $('form[name="product_category_form"]').attr('action', newHref)

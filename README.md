@@ -20,7 +20,8 @@ Besides these categories, another important aspect to manage are the Products. E
 
 ## How to initialize the project
 1. using GIT you will the the following command git clone https://github.com/cristinagroh/dynamic_attributes.git
-2. create your .env file using the example from the project folder and the database
-3. run php artisan migrate
-4. run php artisan serve
-5. for bringing the exchange rate you will run the following command: php artisan app:get-bnr-exchange-rate-command {CURRENCIES} // for example EUR,RON
+2. composer install
+3. create your .env file using the example from the project folder and the database
+4. run php artisan migrate
+5. run php artisan serve
+6. for bringing the exchange rate you will run the following command: php artisan app:get-bnr-exchange-rate-command {CURRENCIES} // for example EUR,RON

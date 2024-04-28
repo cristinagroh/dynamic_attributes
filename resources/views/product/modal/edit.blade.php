@@ -50,7 +50,7 @@ $productCategories = ProductCategory::get();
                         <div class="col-md-12">
                             <div class="form-group">
                                 <strong>{{ __('Product category') }}:</strong>
-                                <select name="product_category_id" class="form-control">
+                                <select name="product_category_id" class="form-control" required>
                                     <option value="0"></option>
                                     @foreach($productCategories as $pc)
                                         <option value="{{$pc->id}}">{{$pc->name}}</option>

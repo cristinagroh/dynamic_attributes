@@ -8,6 +8,9 @@
 <script type="text/javascript">
     function addAttributes(name, value = '')
     {
+        if($('input[name="'+name.toLowerCase().replace(' ', '_')+'"]').length > 0){
+            return;
+        }
         $('.product_attributes').append(
             $('<div></div>').attr('class', 'col-md-12')
             .append(
@@ -50,7 +53,7 @@
                     $('#editProduct input[name="code"]').val(response.data.code)
                     $('#editProduct input[name="base_currency_value"]').val(response.data.base_currency_value)
                     $('#editProduct input[name="base_currency_tax_value"]').val(response.data.base_currency_tax_value)
-                    $("#editProduct select[name='product_category_id']").val(response.data.product_category_id)
+                    $("#editProduct select[name='product_category_id']").val(response.data.product_category_id).change();
                     $('#editProduct .product_attributes').empty();
                     $.each(response.data.attributes, function (key, entry) {
                         addAttributes(key, entry);
